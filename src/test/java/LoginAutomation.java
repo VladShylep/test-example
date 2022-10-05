@@ -23,14 +23,14 @@ public class LoginAutomation {
         List<WebElement> productCard = driver.findElement(By.className("product_list")).findElements(By.xpath("*"));
         Actions actions = new Actions(driver);
         actions.moveToElement(productCard.get(0)).click().build().perform();
-        Thread.sleep(15000);
+        Thread.sleep(20000);
         WebElement color = driver.findElement(By.id("color_15"));
         actions.moveToElement(color).click().build().perform();
         WebElement addProduct = driver.findElement(By.name("Submit"));
         addProduct.click();
         WebElement dialog = driver.findElement(By.cssSelector("h2"));
-
-        Assert.assertEquals(dialog.getText(), "");
+        Thread.sleep(20000);
+        Assert.assertEquals(dialog.getText(), "Product successfully added to your shopping cart");
 
 
 
